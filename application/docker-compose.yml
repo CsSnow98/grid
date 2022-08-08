@@ -1,0 +1,19 @@
+version: '2.1'
+
+networks:
+  fixtures_test:
+    external:
+      name: fixtures_test
+
+services:
+  grid.app:
+    build: .
+    image: grid/application:latest
+    container_name: grid.app
+    ports:
+      - "8000:8000"
+    volumes:
+      - /usr/share/zoneinfo/Asia/Shanghai:/usr/share/zoneinfo/Asia/Shanghai
+      - ./../fixtures/crypto-config:/network/crypto-config
+    networks:
+      - fixtures_test

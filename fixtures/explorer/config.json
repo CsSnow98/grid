@@ -1,0 +1,9 @@
+{
+  "network-configs": {
+    "test-network": {
+      "name": "fixtures_test",
+      "profile": "./connection-profile/network.json"
+    }
+  },
+  "license": "Apache-2.0"
+}
