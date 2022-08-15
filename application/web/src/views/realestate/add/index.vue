@@ -2,8 +2,8 @@
   <div class="app-container">
     <el-form ref="ruleForm" v-loading="loading" :model="ruleForm" :rules="rules" label-width="100px">
 
-      <el-form-item label="业主" prop="proprietor">
-        <el-select v-model="ruleForm.proprietor" placeholder="请选择业主" @change="selectGet">
+      <el-form-item label="用户" prop="proprietor">
+        <el-select v-model="ruleForm.proprietor" placeholder="请选择用户" @change="selectGet">
           <el-option
             v-for="item in accountList"
             :key="item.accountId"
@@ -53,7 +53,7 @@ export default {
       accountList: [],
       rules: {
         proprietor: [
-          { required: true, message: '请选择业主', trigger: 'change' }
+          { required: true, message: '请选择用户', trigger: 'change' }
         ],
         totalArea: [
           { validator: checkArea, trigger: 'blur' }

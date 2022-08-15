@@ -28,7 +28,7 @@
             <span>{{ val.realEstateId }}</span>
           </div>
           <div class="item">
-            <el-tag type="success">业主ID: </el-tag>
+            <el-tag type="success">用户ID: </el-tag>
             <span>{{ val.proprietor }}</span>
           </div>
           <div class="item">
@@ -65,8 +65,8 @@
     </el-dialog>
     <el-dialog v-loading="loadingDialog" :visible.sync="dialogCreateDonating" :close-on-click-modal="false" @close="resetForm('DonatingForm')">
       <el-form ref="DonatingForm" :model="DonatingForm" :rules="rulesDonating" label-width="100px">
-        <el-form-item label="业主" prop="proprietor">
-          <el-select v-model="DonatingForm.proprietor" placeholder="请选择业主" @change="selectGet">
+        <el-form-item label="用户" prop="proprietor">
+          <el-select v-model="DonatingForm.proprietor" placeholder="请选择用户" @change="selectGet">
             <el-option
               v-for="item in accountList"
               :key="item.accountId"
@@ -127,7 +127,7 @@ export default {
       },
       rulesDonating: {
         proprietor: [
-          { required: true, message: '请选择业主', trigger: 'change' }
+          { required: true, message: '请选择用户', trigger: 'change' }
         ]
       },
       accountList: [],

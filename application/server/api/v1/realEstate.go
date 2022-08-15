@@ -14,13 +14,13 @@ import (
 
 type RealEstateRequestBody struct {
 	AccountId   string  `json:"accountId"`   //操作人ID
-	Proprietor  string  `json:"proprietor"`  //所有者(业主)(业主AccountId)
+	Proprietor  string  `json:"proprietor"`  //所有者(用户)(用户AccountId)
 	TotalArea   float64 `json:"totalArea"`   //总面积
 	LivingSpace float64 `json:"livingSpace"` //生活空间
 }
 
 type RealEstateQueryRequestBody struct {
-	Proprietor string `json:"proprietor"` //所有者(业主)(业主AccountId)
+	Proprietor string `json:"proprietor"` //所有者(用户)(用户AccountId)
 }
 
 func CreateRealEstate(c *gin.Context) {
