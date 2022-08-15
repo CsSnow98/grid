@@ -52,10 +52,10 @@ func CreateRealEstate(stub shim.ChaincodeStubInterface, args []string) pb.Respon
 	if account.UserName != "管理员" {
 		return shim.Error(fmt.Sprintf("操作人权限不足%s", err))
 	}
-	//判断业主是否存在
+	//判断用户是否存在
 	resultsProprietor, err := utils.GetStateByPartialCompositeKeys(stub, model.AccountKey, []string{proprietor})
 	if err != nil || len(resultsProprietor) != 1 {
-		return shim.Error(fmt.Sprintf("业主proprietor信息验证失败%s", err))
+		return shim.Error(fmt.Sprintf("用户proprietor信息验证失败%s", err))
 	}
 	realEstate := &model.RealEstate{
 		RealEstateID: stub.GetTxID()[:16],

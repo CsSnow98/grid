@@ -1,6 +1,6 @@
 package model
 
-// Account 账户，虚拟管理员和若干业主账号
+// Account 账户，虚拟管理员和若干用户账号
 type Account struct {
 	AccountId string  `json:"accountId"` //账号ID
 	UserName  string  `json:"userName"`  //账号名
@@ -12,7 +12,7 @@ type Account struct {
 // Proprietor和RealEstateID一起作为复合键,保证可以通过Proprietor查询到名下所有的房产信息
 type RealEstate struct {
 	RealEstateID string  `json:"realEstateId"` //房地产ID
-	Proprietor   string  `json:"proprietor"`   //所有者(业主)(业主AccountId)
+	Proprietor   string  `json:"proprietor"`   //所有者(用户)(用户AccountId)
 	Encumbrance  bool    `json:"encumbrance"`  //是否作为担保
 	TotalArea    float64 `json:"totalArea"`    //总面积
 	LivingSpace  float64 `json:"livingSpace"`  //生活空间
